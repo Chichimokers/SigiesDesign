@@ -1,0 +1,8 @@
+/* sidebar.component.css */
+aside {
+  /* Añadir sombreado o bordes si lo deseas */
+}
+
+nav ul li:hover {
+  background-color: #1D4ED8; /* Azul más oscuro */
+}
