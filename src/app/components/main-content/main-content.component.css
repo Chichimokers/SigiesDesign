@@ -1,0 +1,10 @@
+.flex {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .module-group {
+    margin: 20px; /* Espaciado entre grupos */
+  }
+  

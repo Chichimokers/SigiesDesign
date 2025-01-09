@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+  }
+  
+  .flex {
+    display: flex; /* Activa Flexbox en este contenedor */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+  }
+  
+  .centered-content {
+    margin: auto; /* Centra el contenido dentro del espacio disponible */
+  }
+  

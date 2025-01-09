@@ -1,6 +1,16 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  <app-module-card [number]="1" title="MÓDULO ORGANIZACIÓN"></app-module-card>
-  <app-module-card [number]="2" title="MÓDULO EXÁMEN"></app-module-card>
-  <app-module-card [number]="3" title="MÓDULO ASIGNACIÓN"></app-module-card>
-  <app-module-card [number]="4" title="MÓDULO GENERAL"></app-module-card>
+<div class="flex">
+  
+  <div class="module-group">
+    <app-module-card [number]="1" title="MÓDULO ORGANIZACIÓN"></app-module-card>
+    <app-module-card [number]="2" title="MÓDULO EXÁMEN"></app-module-card>
+  </div>
+
+  <div class="module-group" style="margin: 10%;">
+
+    <app-module-card [number]="3" title="MÓDULO ASIGNACIÓN"></app-module-card>
+    
+    <app-module-card [number]="4" title="MÓDULO GENERAL"></app-module-card>
+
+  </div>
+
 </div>

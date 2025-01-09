@@ -1,13 +1,14 @@
-<div class="flex h-screen">
-  <!-- Sidebar -->
-  <app-sidebar></app-sidebar>
 
-  <!-- Contenido principal (todavía por construir) -->
-  <div class="flex-1 p-10 bg-gray-100">
-   <app-main-content></app-main-content>
+<div class="flex-container flex-col">
+  <app-navbar></app-navbar>
+  <div class="flex flex-row">
 
+    <app-sidebar style="height: 51.999em;"></app-sidebar>
+
+    <app-main-content class="centered-content"></app-main-content>
+    
   </div>
-
-
+  
   <app-footer></app-footer>
+
 </div>

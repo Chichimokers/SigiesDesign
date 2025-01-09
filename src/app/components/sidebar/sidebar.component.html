@@ -1,15 +1,22 @@
-<aside class="w-64 bg-blue-900 text-white flex-shrink-0 min-h-screen p-4">
+<div [ngClass]="{'w-64': isSidebarVisible, 'w-16': !isSidebarVisible}" 
+     class="bg-blue-900 text-white flex-shrink-0 min-h-screen p-4 transition-all duration-300">
+  
   <div class="flex items-center mb-4">
-    <button class="text-white text-2xl">
+    <button class="text-white text-2xl" (click)="toggleSidebar()">
       <i class="fas fa-bars"></i>
     </button>
-    <h2 class="ml-4 text-lg font-bold">ORGANIZACIÓN</h2>
+    <h2 *ngIf="isSidebarVisible" class="ml-4 text-lg font-bold">ORGANIZACIÓN</h2>
   </div>
+  
   <nav>
     <ul>
-      <li *ngFor="let item of menuItems" class="px-6 py-2 hover:bg-blue-800 cursor-pointer">
-        <span class="text-yellow-400 mr-2">{{ item.number }}</span> {{ item.label }}
+      <li *ngFor="let item of menuItems" 
+          class="px-6 py-2 hover:bg-blue-800 cursor-pointer flex items-center"
+          [ngClass]="{'justify-center': !isSidebarVisible}">
+        <i class="{{ item.icon }} text-yellow-400 mr-2"></i> 
+        <span *ngIf="isSidebarVisible">{{ item.label }}</span> <!-- Mostrar texto solo si está visible -->
       </li>
     </ul>
   </nav>
-</aside>
+</div>
+
