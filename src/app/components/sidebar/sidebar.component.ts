@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,20 +7,28 @@ import { Component } from '@angular/core';
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.css']
 })
-export class SidebarComponent {
+export class SidebarComponent  implements OnInit{
   // Datos del menú lateral con iconos
-  menuItems = [
-    { icon: 'fas fa-code', label: 'Codificadores' },
-    { icon: 'fas fa-list-alt', label: 'Plan de plazas general' },
-    { icon: 'fas fa-cogs', label: 'Plan de plazas procesamiento' },
-    { icon: 'fas fa-history', label: 'Historial Plan de plazas' },
-    { icon: 'fas fa-graduation-cap', label: 'Preuniversitario' },
-    { icon: 'fas fa-user-graduate', label: 'Estudiante' },
-    { icon: 'fas fa-check-circle', label: 'Requisitos Adicionales' },
-    { icon: 'fas fa-file-alt', label: 'Solicitud' },
-    { icon: 'fas fa-user-check', label: 'Estudiante eximido' }
+  constructor(private sidebarService: SidebarService) {}
+
+  items: any = [
+
   ];
+
   isSidebarVisible : boolean = true  ;
+
+  ngOnInit(): void {
+
+        // Cargar ítems iniciales (organizacion por defecto)
+        this.items = this.sidebarService.getItems();
+
+        // Suscribirse a cambios de módulo
+        this.sidebarService.activeModule$.subscribe((module) => {
+          this.items = this.sidebarService.getItems();
+        });
+
+  }
+
  toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible; // Alterna el estado
   }
