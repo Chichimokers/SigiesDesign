@@ -1,14 +1,22 @@
 
 <div class="flex-container flex-col">
+
   <app-navbar></app-navbar>
+
   <div class="flex flex-row">
 
-    <app-sidebar style="height: 51.999em;"></app-sidebar>
+    <app-sidebar style="height: max-content;"></app-sidebar>
 
-    <app-main-content class="centered-content"></app-main-content>
-    
+    <div class="centered-content">
+
+      <app-main-content></app-main-content>
+      <router-outlet></router-outlet>
+
+    </div>
+
+
   </div>
-  
+
   <app-footer></app-footer>
 
 </div>
