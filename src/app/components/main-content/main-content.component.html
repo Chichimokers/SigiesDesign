@@ -1,16 +1,9 @@
-<div class="flex">
-  
-  <div class="module-group">
-    <app-module-card [number]="1" title="MÓDULO ORGANIZACIÓN"></app-module-card>
-    <app-module-card [number]="2" title="MÓDULO EXÁMEN"></app-module-card>
-  </div>
-
-  <div class="module-group" style="margin: 10%;">
-
-    <app-module-card [number]="3" title="MÓDULO ASIGNACIÓN"></app-module-card>
-    
-    <app-module-card [number]="4" title="MÓDULO GENERAL"></app-module-card>
-
-  </div>
-
+<div class="module-container grid grid-cols-1 md:grid-cols-2 gap-4">
+  <ng-container *ngFor="let module of modules; trackBy: trackByModule">
+    <app-module-card 
+      [number]="module.number" 
+      [title]="module.title"
+      class="w-full">
+    </app-module-card>
+  </ng-container>
 </div>
