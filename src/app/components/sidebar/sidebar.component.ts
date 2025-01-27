@@ -16,7 +16,12 @@ export class SidebarComponent  implements OnInit{
   ];
 
   isSidebarVisible : boolean = true  ;
-
+// En tu componente
+toggleExpansion(item: any) {
+  if (item.children) {
+    this.sidebarService.toggleItemExpansion(item);
+  }
+}
   ngOnInit(): void {
 
         // Cargar ítems iniciales (organizacion por defecto)

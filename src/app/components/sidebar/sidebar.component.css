@@ -30,3 +30,17 @@ nav li {
 .sidebar-hidden nav li {
   justify-content: center; /* Centra horizontalmente solo cuando está oculta */
 }
+/* Transiciones suaves para elementos desplegables */
+ul {
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover más suave */
+li {
+  transition: background-color 0.2s ease;
+}
+
+/* Mejor alineación de íconos hijos */
+.fa-chevron-right, .fa-chevron-down {
+  transition: transform 0.2s ease;
+}
