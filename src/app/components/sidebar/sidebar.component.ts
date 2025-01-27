@@ -33,8 +33,28 @@ toggleExpansion(item: any) {
         });
 
   }
+  
 
  toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible; // Alterna el estado
   }
+
+  handleItemClick(item: any) {
+    // Si el sidebar está cerrado, abrirlo primero
+    if (!this.isSidebarVisible) {
+      this.toggleSidebar();
+      // Si el item tiene hijos, expandirlo después de abrir el sidebar
+      setTimeout(() => {
+        if (item.children) {
+          this.toggleExpansion(item);
+        }
+      }, 300); // Esperar a que termine la animación del sidebar
+    } else {
+      // Si ya está abierto, manejar la expansión normalmente
+      if (item.children) {
+        this.toggleExpansion(item);
+      }
+    }
+  }
+
 }

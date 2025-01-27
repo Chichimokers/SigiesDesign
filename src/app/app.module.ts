@@ -12,10 +12,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
     MainContentComponent,
     ModuleCardComponent,
     FooterComponent,
+    SidebarComponent,
     NavbarComponent
   ],
   imports: [

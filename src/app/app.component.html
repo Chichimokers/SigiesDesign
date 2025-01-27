@@ -1,22 +1,18 @@
+<div class="min-h-screen flex flex-col">
+  <app-navbar class="sticky top-0 z-50"></app-navbar>
 
-<div class="flex-container flex-col">
+  <div class="flex-1 flex flex-col lg:flex-row">
+    <app-sidebar 
+     >
+    </app-sidebar>
 
-  <app-navbar></app-navbar>
-
-  <div class="flex flex-row">
-
-    <app-sidebar style="height: max-content;"></app-sidebar>
-
-    <div class="centered-content">
-
-      <app-main-content></app-main-content>
-      <router-outlet></router-outlet>
-
-    </div>
-
-
+  
+    <main class="flex-1 bg-gray-100 p-4 md:p-6 lg:p-8 overflow-auto">
+      <div class="max-w-7xl mx-auto space-y-6">
+        <app-main-content></app-main-content>
+        <router-outlet></router-outlet>
+      </div>
+    </main>
   </div>
-
-  <app-footer></app-footer>
-
+  <app-footer class="mt-auto border-t border-gray-200"></app-footer>
 </div>
