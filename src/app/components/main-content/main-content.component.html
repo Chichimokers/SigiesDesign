@@ -1,10 +1,10 @@
-<div class="module-container  grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4" >
+<div class=" module-container  grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4" >
   <ng-container *ngFor="let module of modules; trackBy: trackByModule">
     <app-module-card 
       (click)="setmodule(module.name)" 
       [number]="module.number" 
       [title]="module.title"
-      class="w-full">
+      class="w-full ">
     </app-module-card>
   </ng-container>
 </div>

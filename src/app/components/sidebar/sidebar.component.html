@@ -41,7 +41,7 @@
             class="ml-6 mt-1 space-y-1 border-l-2 border-blue-700">
           <li *ngFor="let child of item.children"
               class="pl-3 pr-2 py-1.5 rounded-md flex items-center gap-2 cursor-pointer
-                     transition-all duration-200 hover:bg-blue-800">
+                     transition-all duration-200 hover:bg-blue-800 slide-in">
             <i *ngIf="child.icon" class="{{ child.icon }} text-yellow-400 text-sm"></i>
             <span class="text-sm text-white font-light truncate">{{ child.label }}</span>
           </li>
