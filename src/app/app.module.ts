@@ -8,6 +8,10 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { ModuleCardComponent } from './components/module-card/module-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { OrganizationSadies218PortraitComponent } from './components/reports/organization-sadies218-portrait/organization-sadies218-portrait.component';
+import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,11 +20,17 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MainContentComponent,
     ModuleCardComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    OrganizationSadies218PortraitComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+
 
   ],
   providers: [],

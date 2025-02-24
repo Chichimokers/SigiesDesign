@@ -24,6 +24,7 @@ export class SidebarService {
         ]
       },
 
+
       {
         icon: 'fas fa-list-alt',
         label: 'Plan de plazas',
@@ -33,12 +34,13 @@ export class SidebarService {
           { label: 'Historial', icon: 'fas fa-history' }
         ]
       },
+
       {
         icon: 'fas fa-graduation-cap',
         label: 'Educación',
         children: [
           { label: 'Preuniversitario', icon: 'fas fa-school' },
-          { label: 'Estudiantes', icon: 'fas fa-user-graduate' },
+          { label: 'Estudiantes', icon: 'fas fa-user-graduate', path : "/OrginazionSadies2180Portrait" },
           { label: 'Eximidos', icon: 'fas fa-user-check' }
         ]
       }

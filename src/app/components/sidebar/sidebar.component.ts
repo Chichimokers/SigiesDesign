@@ -34,6 +34,9 @@ toggleExpansion(item: any) {
 
   }
 
+goto(path :string){
+
+}
  toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible; // Alterna el estado
   }
