@@ -7,20 +7,14 @@
     </button>
 
     <h2 *ngIf="isSidebarVisible" class="ml-4 text-lg font-bold">
-
       {{items[0].title}}
-
     </h2>
-
   </div>
 
   <nav>
-
     <ul>
-
       <li *ngFor="let item of items"
-          class="px-6 py-2 hover:bg-blue-800 cursor-pointer"
-
+          class="px-6 py-2 cursor-pointer"
           [ngClass]="{
             'flex flex-col items-start': isSidebarVisible,
             'items-center': !isSidebarVisible
@@ -28,30 +22,22 @@
 
         <!-- Elemento padre -->
         <div class="flex items-center w-full" (click)="item.children && toggleExpansion(item)">
-
           <i class="{{ item.icon }} text-yellow-400 mr-2"></i>
-
           <span *ngIf="isSidebarVisible" class="flex-1">{{ item.label }}</span>
-
           <!-- Flecha desplegable -->
           <i *ngIf="item.children && isSidebarVisible" class="fas fa-chevron-{{ item.expanded ? 'down' : 'right' }} text-sm ml-2"></i>
-
         </div>
 
         <!-- Children -->
-        <ul *ngIf="item.expanded && item.children && isSidebarVisible" class="w-full mt-1 ml-4 border-l-2 border-blue-700">
-
-          <li *ngFor="let child of item.children" routerLink="OrginazionSadies2180Portrait"
-
-            class="px-3 py-2 hover:bg-blue-800 cursor-pointer flex items-center">
-
+        <ul *ngIf="item.expanded && item.children && isSidebarVisible" class="w-full mt-1 ml-4">
+          <li *ngFor="let child of item.children" routerLink="{{child.path}}"
+              class="px-3 py-2 cursor-pointer flex items-center
+                     hover:bg-white hover:text-blue-900 transition-colors duration-300
+                     focus:outline-none">
             <i *ngIf="child.icon" class="{{ child.icon }} text-yellow-400 mr-2 text-sm"></i>
-
-            <span class="text-sm"  >{{ child.label }}</span>
-
+            <span class="text-sm">{{ child.label }}</span>
           </li>
         </ul>
-
 
       </li>
     </ul>

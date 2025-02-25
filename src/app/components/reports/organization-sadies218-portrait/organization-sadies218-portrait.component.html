@@ -1,41 +1,26 @@
-<div class="container flex flex-col gap-4 w-full h-screen p-4">
-  <!-- Formulario en la parte superior -->
-  <form [formGroup]="form" class="w-full p-4 bg-gray-100 rounded-lg">
-    <div class="flex gap-4">
-      <div class="mb-4 flex-1">
-        <label class="block mb-2">Campo 1</label>
-        <input type="text" formControlName="campo1" class="w-full p-2 border rounded">
-      </div>
+<div class="flex flex-col bg-gray-50">
+  <!-- Input para cargar archivos -->
+<app-formularios
+(formSubmit)="handelsubmit($event)"
+ [fields]="fields"
+ ></app-formularios>
 
-      <div class="mb-4 flex-1">
-        <label class="block mb-2">Campo 2</label>
-        <input type="text" formControlName="campo2" class="w-full p-2 border rounded">
-      </div>
+  <!-- Contenedor del preview -->
+  <div class="flex-1 p-4">
 
-      <div class="mb-4 flex-1">
-        <label class="block mb-2">Campo 3</label>
-        <input type="text" formControlName="campo3" class="w-full p-2 border rounded">
-      </div>
+    <!-- Preview de PDF -->
+    <iframe *ngIf="pdfUrl && fileType === 'pdf'"
+            [src]="pdfUrl"
+            style="width: 1000px; height: auto;"
+            class="border-none"></iframe>
+
+    <!-- Mensaje cuando no hay archivo -->
+    <div *ngIf="!fileType" class="flex items-center justify-center h-full text-gray-500">
+
+      Seleccione un archivo PDF o Excel para previsualizar
+
     </div>
 
-    <button
-      (click)="generarPDF()"
-      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-    >
-      Generar PDF
-    </button>
-
-    <div *ngIf="error" class="mt-4 text-red-500">{{ error }}</div>
-  </form>
-
-  <!-- Visor de PDF (ocupa el espacio restante) -->
-  <div class="flex-1 bg-white p-4 rounded-lg shadow-lg">
-    <div *ngIf="!pdfUrl" class="text-gray-500">Esperando datos para generar PDF...</div>
-    <iframe
-      *ngIf="pdfUrl"
-      [src]="pdfUrl"
-      class="w-full h-full border"
-      frameborder="0"
-    ></iframe>
   </div>
+
 </div>
