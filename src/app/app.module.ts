@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { OrganizationSadies218PortraitComponent } from './components/reports/organization-sadies218-portrait/organization-sadies218-portrait.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsComponent } from './components/layouts/form/formularios.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ModuleCardComponent,
     FooterComponent,
     NavbarComponent,
-    OrganizationSadies218PortraitComponent
+    OrganizationSadies218PortraitComponent,
+    FormsComponent
 
   ],
   imports: [
