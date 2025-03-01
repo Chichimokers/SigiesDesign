@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { DynamicField } from '../../layouts/form/DynamicField';
-import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-organization-sadies218-portrait',
   standalone: false,
