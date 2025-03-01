@@ -68,41 +68,7 @@ export class OrganizationSadies218PortraitComponent {
 
     ///EXCEEEEEEEEEEEEEEEEEL
 
-  loadxls(file: any): void {
 
-      const reader: FileReader = new FileReader();
-      reader.onload = (e: any) => {
-        /* lee el contenido binario */
-        const binarystr: string = e.target.result;
-        const workbook: XLSX.WorkBook = XLSX.read(binarystr, { type: 'binary' });
-        const firstSheetName: string = workbook.SheetNames[0];
-        const worksheet: XLSX.WorkSheet = workbook.Sheets[firstSheetName];
-        /* Convierte la hoja a una matriz de arreglos (header + filas) */
-        this.spreadsheetData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-      };
-      reader.readAsBinaryString(file);
-
-    }
-
-  private parseExcelFile(file: Blob) {
-    const reader = new FileReader();
-
-    reader.onload = (e: any) => {
-      const data = new Uint8Array(e.target.result);
-      const workbook = XLSX.read(data, { type: 'array' });
-      const firstSheetName = workbook.SheetNames[0];
-      const worksheet = workbook.Sheets[firstSheetName];
-
-      // Convertir la hoja de cálculo a un formato compatible con ngx-spreadsheet
-      const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-      this.spreadsheetData = this.convertToSpreadsheetFormat(jsonData);
-
-      // Limpiar preview PDF
-      this.pdfUrl = null;
-    };
-
-    reader.readAsArrayBuffer(file);
-  }
 
 
   private convertToSpreadsheetFormat(data: any[]): any {
@@ -156,9 +122,7 @@ export class OrganizationSadies218PortraitComponent {
           this.error = null;
           }
 
-          if(this.fileType =="xls"){
-           this.loadxls(pdfBlob)
-          }
+
 
 
         },
